@@ -36,7 +36,7 @@ router.get('/:id', (req, res) => {
       attributes: ["id", "category_name"],
     },
     {
-      mode: Tag, through: ProductTag, as: "tags",
+      model: Tag, through: ProductTag, as: "tags",
     },
     ],
   })
@@ -128,7 +128,7 @@ router.delete('/:id', (req, res) => {
     },
   })
     .then((productData) => {
-      res.json(productData);
+      res.status.json(productData);
     })
     .catch((err) => {
       res.status(400).json(err);

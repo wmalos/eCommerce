@@ -33,7 +33,7 @@ router.get("/:id", (req, res) => {
       },
     ],
   })
-    .then((category) => res.status.json(category))
+    .then((category) => res.status(200).json(category))
     .catch((err) => res.status(400).json(err));
 });
 
